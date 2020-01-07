@@ -1,0 +1,16 @@
+[Unit]
+Description=ssh-agent service for OpenNebula
+PartOf=opennebula.service
+ReloadPropagatedFrom=opennebula.service
+
+[Service]
+Type=forking
+Group=oneadmin
+User=oneadmin
+Environment=SSH_AUTH_SOCK=/var/lib/one/.ssh/onessh-agent.sock
+ExecStartPre=/usr/bin/rm -f $SSH_AUTH_SOCK
+ExecStart=/usr/bin/ssh-agent -a $SSH_AUTH_SOCK
+
+[Install]
+WantedBy=opennebula.service
+
