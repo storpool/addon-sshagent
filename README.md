@@ -1,3 +1,6 @@
+# Obsolete!
+OpenNebula 5.12+ use ssh-agent service. This addon must be removed before upgrading to opennebula 5.12+.
+
 # addon-sshagent
 OpenNebula addon that provide configuration of a systemd service that start the ssh-agent when opennebula start
 
